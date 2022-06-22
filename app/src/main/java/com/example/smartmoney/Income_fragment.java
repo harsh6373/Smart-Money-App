@@ -1,5 +1,7 @@
 package com.example.smartmoney;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,8 +22,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -36,10 +41,26 @@ public class Income_fragment extends Fragment {
     FirebaseAuth mAuth;
     DatabaseReference mincomeDatabase;
 
-    FirebaseAuth firebaseAuth;
-    DatabaseReference databaseReference;
+   // FirebaseAuth firebaseAuth;
+   // DatabaseReference databaseReference;
 
     RecyclerView recyclerView;
+
+    TextView income_total_txt;
+
+    private EditText edt_Amount;
+    private EditText edt_Type;
+    private EditText edt_Note;
+
+    private Button btn_Update;
+    private Button btn_Delete;
+
+    private String type;
+    private String note;
+    private int amount;
+
+    private String post_key;
+
 
 
 
@@ -58,6 +79,7 @@ public class Income_fragment extends Fragment {
         edt_income_amount = view.findViewById(R.id.edt_income_amount);
         edt_income_note = view.findViewById(R.id.edt_income_note);
         add_income = view.findViewById(R.id.btn_add_income);
+        income_total_txt = view.findViewById(R.id.income_txt_result);
 
 
 
@@ -121,6 +143,33 @@ public class Income_fragment extends Fragment {
                 Toast.makeText(getActivity(), "Data added", Toast.LENGTH_LONG).show();
             }
         });
+
+
+        mincomeDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                int totalValue = 0;
+
+
+                for (DataSnapshot mysnapshot: snapshot.getChildren()){
+
+                    Data data = mysnapshot.getValue(Data.class);
+
+                    totalValue+= data.getAmount();
+                    String stTotalvalue = String.valueOf(totalValue);
+
+                    income_total_txt.setText(stTotalvalue);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         return view;
     }
 
@@ -134,12 +183,26 @@ public class Income_fragment extends Fragment {
 
         FirebaseRecyclerAdapter<Data,MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Data model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull Data model) {
 
                 holder.setType(model.getType());
                 holder.setNote(model.getNote());
                 holder.setDate(model.getDate());
                 holder.setAmount(model.getAmount());
+
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        post_key=getRef(position).getKey();
+                        type=model.getType();
+                        note=model.getNote();
+                        amount=model.getAmount();
+
+                        updateDataitem();
+                    }
+                });
+
             }
             @NonNull
             @Override
@@ -149,6 +212,8 @@ public class Income_fragment extends Fragment {
             }
         };
 
+
+        recyclerView.setAdapter(adapter);
         adapter.startListening();
         recyclerView.setAdapter(adapter);
     }
@@ -167,23 +232,84 @@ public class Income_fragment extends Fragment {
             mView = itemView;
         }
 
-        private void setType(String type){
+
+        void setType(String type){
             TextView mType = mView.findViewById(R.id.type_txt_income);
             mType.setText(type);
         }
-        private void setNote(String note){
+        void setNote(String note){
             TextView mNote = mView.findViewById(R.id.note_txt_income);
             mNote.setText(note);
         }
-        private void setDate(String date){
+        void setDate(String date){
             TextView mDate = mView.findViewById(R.id.date_txt_income);
             mDate.setText(date);
         }
-        private void setAmount(int amount){
+        void setAmount(int amount){
             TextView mAmount = mView.findViewById(R.id.amount_txt_income);
             String stamount = String.valueOf(amount);
             mAmount.setText(stamount);
         }
     }
+
+    private void updateDataitem(){
+        AlertDialog.Builder mydialog = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+
+        View myview = inflater.inflate(R.layout.custom_layout_for_dialogbox,null);
+        mydialog.setView(myview);
+
+        edt_Amount = myview.findViewById(R.id.amount_edt);
+        edt_Type = myview.findViewById(R.id.type_edt);
+        edt_Note = myview.findViewById(R.id.note_edt);
+
+        edt_Type.setText(type);
+        edt_Type.setSelection(type.length());
+
+        edt_Note.setText(note);
+        edt_Note.setSelection(note.length());
+
+        edt_Amount.setText(String.valueOf(amount));
+        edt_Amount.setSelection(String.valueOf(amount).length());
+
+
+        btn_Update= myview.findViewById(R.id.btn_update);
+        btn_Delete = myview.findViewById(R.id.btn_delete);
+
+        AlertDialog dialog = mydialog.create();
+
+        btn_Update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                type= edt_Type.getText().toString().trim();
+                note=edt_Note.getText().toString().trim();
+
+                String mdamount= String.valueOf(amount);
+
+                mdamount=edt_Amount.getText().toString().trim();
+
+                int myAmount = Integer.parseInt(mdamount);
+
+                String mDate=DateFormat.getDateInstance().format(new Date());
+
+                Data data= new Data(myAmount,type,note,post_key,mDate);
+
+                mincomeDatabase.child(post_key).setValue(data);
+
+                dialog.dismiss();
+            }
+        });
+
+        btn_Delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+
+    }
+
+
 
 }
