@@ -288,6 +288,23 @@ public class Income_fragment extends Fragment {
 
                 mdamount=edt_Amount.getText().toString().trim();
 
+
+                if (type.isEmpty()) {
+                    edt_Type.setError("Income type is empty");
+                    edt_Type.requestFocus();
+                    return;
+                }
+                if (mdamount.isEmpty()) {
+                    edt_Amount.setError("amount is empty");
+                    edt_Amount.requestFocus();
+                    return;
+                }
+                if (note.isEmpty()) {
+                    edt_Note.setError("note is empty");
+                    edt_Note.requestFocus();
+                    return;
+                }
+
                 int myAmount = Integer.parseInt(mdamount);
 
                 String mDate=DateFormat.getDateInstance().format(new Date());

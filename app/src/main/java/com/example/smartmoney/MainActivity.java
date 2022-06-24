@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         };
 
         GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.web_client_id))//you can also use R.string.default_web_client_id
+                .requestIdToken(getString(R.string.web_client_id))
                 .requestEmail()
                 .build();
         googleApiClient=new GoogleApiClient.Builder(this)
@@ -270,7 +270,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
                         if(task.isSuccessful()){
                             Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            gotoProfile();
+                            Intent i = new Intent(getApplicationContext(),Fill_Details.class);
+                            startActivity(i);
+                            // gotoProfile();
                         }else{
                             Log.w(TAG, "signInWithCredential" + task.getException().getMessage());
                             task.getException().printStackTrace();

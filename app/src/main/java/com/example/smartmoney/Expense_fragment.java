@@ -32,7 +32,7 @@ import java.util.Date;
 
 public class Expense_fragment extends Fragment {
 
-    EditText edt_expense_type,edt_expense_amount,edt_expense_note;
+    EditText edt_expense_type, edt_expense_amount, edt_expense_note;
     Button add_expense;
 
     FirebaseAuth mAuth;
@@ -57,7 +57,6 @@ public class Expense_fragment extends Fragment {
     private String post_key;
 
 
-
     public Expense_fragment() {
         // Required empty public constructor
     }
@@ -67,7 +66,7 @@ public class Expense_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_expense_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_expense_fragment, container, false);
 
         edt_expense_type = view.findViewById(R.id.edt_expence_type);
         edt_expense_amount = view.findViewById(R.id.edt_expence_amount);
@@ -75,8 +74,8 @@ public class Expense_fragment extends Fragment {
         add_expense = view.findViewById(R.id.btn_add_expence);
         expanse_total_txt = view.findViewById(R.id.expense_txt_result);
 
-        mAuth=FirebaseAuth.getInstance();
-        FirebaseUser mUser =mAuth.getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser mUser = mAuth.getCurrentUser();
         String uid = mUser.getUid();
 
         mexpenseDatabase = FirebaseDatabase.getInstance().getReference().child("Expense_Data").child(uid);
@@ -97,20 +96,17 @@ public class Expense_fragment extends Fragment {
                 String expense_note = edt_expense_note.getText().toString().trim();
                 int amount_expense = Integer.parseInt(expense_amount);
 
-                if(expense_type.isEmpty())
-                {
+                if (expense_type.isEmpty()) {
                     edt_expense_type.setError("income type is empty");
                     edt_expense_type.requestFocus();
                     return;
                 }
-                if(expense_amount.isEmpty())
-                {
+                if (expense_amount.isEmpty()) {
                     edt_expense_amount.setError("amount is empty");
                     edt_expense_amount.requestFocus();
                     return;
                 }
-                if(expense_note.isEmpty())
-                {
+                if (expense_note.isEmpty()) {
                     edt_expense_note.setError("note is empty");
                     edt_expense_note.requestFocus();
                     return;
@@ -121,7 +117,7 @@ public class Expense_fragment extends Fragment {
 
                 String mDate = DateFormat.getDateInstance().format(new Date());
 
-                Data data = new Data(amount_expense,expense_type,expense_note,id,mDate);
+                Data data = new Data(amount_expense, expense_type, expense_note, id, mDate);
 
                 mexpenseDatabase.child(id).setValue(data);
 
@@ -138,11 +134,11 @@ public class Expense_fragment extends Fragment {
                 int totalValue_expanse = 0;
 
 
-                for (DataSnapshot mysnapshot: snapshot.getChildren()){
+                for (DataSnapshot mysnapshot : snapshot.getChildren()) {
 
                     Data data = mysnapshot.getValue(Data.class);
 
-                    totalValue_expanse+= data.getAmount();
+                    totalValue_expanse += data.getAmount();
                     String stTotalvalue_expanse = String.valueOf(totalValue_expanse);
 
                     expanse_total_txt.setText(stTotalvalue_expanse);
@@ -154,8 +150,6 @@ public class Expense_fragment extends Fragment {
 
             }
         });
-
-
 
 
         return view;
@@ -181,15 +175,16 @@ public class Expense_fragment extends Fragment {
                     @Override
                     public void onClick(View view) {
 
-                        post_key=getRef(position).getKey();
-                        type=model.getType();
-                        note=model.getNote();
-                        amount=model.getAmount();
+                        post_key = getRef(position).getKey();
+                        type = model.getType();
+                        note = model.getNote();
+                        amount = model.getAmount();
 
                         updateDataitem();
                     }
                 });
             }
+
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -210,28 +205,32 @@ public class Expense_fragment extends Fragment {
 
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         View mView;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
         }
 
 
-        private void setType(String type){
+        private void setType(String type) {
             TextView mType = mView.findViewById(R.id.type_txt_expense);
             mType.setText(type);
         }
-        private void setNote(String note){
+
+        private void setNote(String note) {
             TextView mNote = mView.findViewById(R.id.note_txt_expense);
             mNote.setText(note);
         }
-        private void setDate(String date){
+
+        private void setDate(String date) {
             TextView mDate = mView.findViewById(R.id.date_txt_expense);
             mDate.setText(date);
         }
-        private void setAmount(int amount){
+
+        private void setAmount(int amount) {
             TextView mAmount = mView.findViewById(R.id.amount_txt_expense);
             String stamount = String.valueOf(amount);
             mAmount.setText(stamount);
@@ -239,11 +238,11 @@ public class Expense_fragment extends Fragment {
     }
 
 
-    private void updateDataitem(){
+    private void updateDataitem() {
         AlertDialog.Builder mydialog = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = LayoutInflater.from(getActivity());
 
-        View myview = inflater.inflate(R.layout.custom_layout_for_dialogbox,null);
+        View myview = inflater.inflate(R.layout.custom_layout_for_dialogbox, null);
         mydialog.setView(myview);
 
         edt_Amount = myview.findViewById(R.id.amount_edt);
@@ -260,7 +259,7 @@ public class Expense_fragment extends Fragment {
         edt_Amount.setSelection(String.valueOf(amount).length());
 
 
-        btn_Update= myview.findViewById(R.id.btn_update);
+        btn_Update = myview.findViewById(R.id.btn_update);
         btn_Delete = myview.findViewById(R.id.btn_delete);
 
         AlertDialog dialog = mydialog.create();
@@ -268,18 +267,34 @@ public class Expense_fragment extends Fragment {
         btn_Update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                type= edt_Type.getText().toString().trim();
-                note=edt_Note.getText().toString().trim();
+                type = edt_Type.getText().toString().trim();
+                note = edt_Note.getText().toString().trim();
 
-                String mdamount= String.valueOf(amount);
+                String mdamount = String.valueOf(amount);
 
-                mdamount=edt_Amount.getText().toString().trim();
+                mdamount = edt_Amount.getText().toString().trim();
+
+                if (type.isEmpty()) {
+                    edt_Type.setError("Expanse type is empty");
+                    edt_Type.requestFocus();
+                    return;
+                }
+                if (mdamount.isEmpty()) {
+                    edt_Amount.setError("amount is empty");
+                    edt_Amount.requestFocus();
+                    return;
+                }
+                if (note.isEmpty()) {
+                    edt_Note.setError("note is empty");
+                    edt_Note.requestFocus();
+                    return;
+                }
 
                 int myAmount = Integer.parseInt(mdamount);
 
-                String mDate=DateFormat.getDateInstance().format(new Date());
+                String mDate = DateFormat.getDateInstance().format(new Date());
 
-                Data data= new Data(myAmount,type,note,post_key,mDate);
+                Data data = new Data(myAmount, type, note, post_key, mDate);
 
                 mexpenseDatabase.child(post_key).setValue(data);
 

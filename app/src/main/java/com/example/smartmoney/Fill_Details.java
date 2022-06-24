@@ -24,15 +24,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Fill_Details extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    EditText edt_fname,edt_lname,edt_address,edt_email;
+    EditText edt_fname, edt_lname, edt_address, edt_email;
     Spinner profession;
     RadioGroup radio_gender;
     Button submit;
     FirebaseDatabase db;
-    DatabaseReference root ;
+    DatabaseReference root;
     FirebaseUser firebaseUser;
     User user;
-    String[] prof = {"Student","Goverment Employee","Private Employee","Freelancer","Entrepreneur"};
+    String[] prof = {"Student", "Goverment Employee", "Private Employee", "Freelancer", "Entrepreneur"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,6 @@ public class Fill_Details extends AppCompatActivity implements AdapterView.OnIte
         profession.setAdapter(aa);
 
 
-
-
-
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,36 +68,32 @@ public class Fill_Details extends AppCompatActivity implements AdapterView.OnIte
                 user = new User();
 
 
-                if(id == R.id.male){
+                if (id == R.id.male) {
                     gender = "Male";
                 }
-                if(id == R.id.female){
+                if (id == R.id.female) {
                     gender = "Female";
                 }
-                if(id == R.id.other){
+                if (id == R.id.other) {
                     gender = "Other";
                 }
 
-                if(fname.isEmpty())
-                {
+                if (fname.isEmpty()) {
                     edt_fname.setError("First Name is empty");
                     edt_fname.requestFocus();
                     return;
                 }
-                if(lname.isEmpty())
-                {
+                if (lname.isEmpty()) {
                     edt_lname.setError("Last Name is empty");
                     edt_lname.requestFocus();
                     return;
                 }
-                if(email.isEmpty())
-                {
+                if (email.isEmpty()) {
                     edt_email.setError("Email is empty");
                     edt_email.requestFocus();
                     return;
                 }
-                if(address.isEmpty())
-                {
+                if (address.isEmpty()) {
                     edt_address.setError("Address is empty");
                     edt_address.requestFocus();
                     return;
@@ -109,9 +102,9 @@ public class Fill_Details extends AppCompatActivity implements AdapterView.OnIte
                 root = db.getReference().child("Users");
                 firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-                addDatatoFirebase(fname,lname,email,address, gender,prof_list);
+                addDatatoFirebase(fname, lname, email, address, gender, prof_list);
 
-                Intent i = new Intent(getApplicationContext(),Dashboard_Activity.class);
+                Intent i = new Intent(getApplicationContext(), Dashboard_Activity.class);
                 startActivity(i);
             }
         });
