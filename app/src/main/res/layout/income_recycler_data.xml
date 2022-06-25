@@ -39,20 +39,22 @@
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/type_txt_income"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Type"
                 android:maxLines="1"
+                android:layout_marginLeft="50dp"
+                android:text="Type"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/type_txt_income"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Note"
                 android:maxLines="1"
+                android:layout_marginLeft="50dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textColor="@color/black"
                 android:textStyle="normal"

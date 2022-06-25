@@ -215,7 +215,7 @@ public class Income_fragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
-        recyclerView.setAdapter(adapter);
+
     }
 
     @Override
@@ -233,19 +233,19 @@ public class Income_fragment extends Fragment {
         }
 
 
-        void setType(String type){
+        public void setType(String type){
             TextView mType = mView.findViewById(R.id.type_txt_income);
             mType.setText(type);
         }
-        void setNote(String note){
+       public void setNote(String note){
             TextView mNote = mView.findViewById(R.id.note_txt_income);
             mNote.setText(note);
         }
-        void setDate(String date){
+        public void setDate(String date){
             TextView mDate = mView.findViewById(R.id.date_txt_income);
             mDate.setText(date);
         }
-        void setAmount(int amount){
+        public void setAmount(int amount){
             TextView mAmount = mView.findViewById(R.id.amount_txt_income);
             String stamount = String.valueOf(amount);
             mAmount.setText(stamount);

@@ -196,7 +196,6 @@ public class Expense_fragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
-        recyclerView.setAdapter(adapter);
     }
 
     @Override

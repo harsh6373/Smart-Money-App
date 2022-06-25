@@ -4,18 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.141" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_feedback_24.xml" value="0.141" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_logout_24.xml" value="0.141" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/activity_fill_details.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/activity_profile.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/appbar_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/content_main.xml" value="0.203125" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/custom_layout_for_dialogbox.xml" value="0.203125" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/dashboard_expanse_recycler_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/dashboard_income_recycler_data.xml" value="0.203125" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/expense_recycler_data.xml" value="0.203125" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/fragment_dashboard_fragment.xml" value="0.25" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/fragment_expense_fragment.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/fragment_income_fragment.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/header_navigationdrawer.xml" value="0.15234375" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/layout/income_recycler_data.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/menu/drawer_menu.xml" value="0.203125" />
       </map>
     </option>
   </component>

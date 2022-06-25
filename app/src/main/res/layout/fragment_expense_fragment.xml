@@ -56,7 +56,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Income type ?" />
+                android:hint="Expanse type ?" />
 
             <EditText
                 android:id="@+id/edt_expence_amount"
@@ -94,20 +94,22 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="5dp"
-                android:elevation="10dp">
+                android:layout_height="70dp"
+                app:cardElevation="10dp"
+                android:elevation="5dp"
+                app:cardCornerRadius="10dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="horizontal">
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:gravity="center"
                         android:layout_margin="10dp"
                         tools:ignore="Suspicious0dp" >
@@ -115,27 +117,27 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:textAppearanceMedium"
-                            android:textColor="@color/black"
-                            android:text="Expense"/>
+                            android:text="Expense"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/black" />
 
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:gravity="center"
                         android:layout_margin="10dp"
                         tools:ignore="Suspicious0dp" >
 
                         <TextView
+                            android:id="@+id/expense_txt_result"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/expense_txt_result"
-                            android:textAppearance="?android:textAppearanceMedium"
-                            android:textColor="@color/black"
-                            android:text="300000"/>
+                            android:text="300000"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/black" />
 
                     </RelativeLayout>
 
@@ -151,6 +153,10 @@
                 android:id="@+id/recycleview_expanse"
                 />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"/>
 
 
 

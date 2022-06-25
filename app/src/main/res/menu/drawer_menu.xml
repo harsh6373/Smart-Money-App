@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/dashBoard_menu"
+            android:title="DASHBOARD"
+            android:icon="@drawable/ic_baseline_dashboard_24"/>
+
+        <item android:id="@+id/Reports_menu"
+            android:title="REPORTS"
+            android:icon="@drawable/ic_report_24"/>
+
+        <item android:id="@+id/Profile_menu"
+            android:title="PROFILE"
+            android:icon="@drawable/ic_profile_24"/>
+
+        <item android:id="@+id/logout_menu"
+            android:title="LOGOUT"
+            android:icon="@drawable/ic_logout_24"/>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="OTHERS">
+
+            <menu>
+                <item android:id="@+id/about_menu"
+                    android:title="ABOUT"
+                    android:icon="@drawable/ic_about_24"/>
+
+                <item android:id="@+id/feedback_menu"
+                    android:title="FEEDBACK"
+                    android:icon="@drawable/ic_feedback_24"/>
+            </menu>
+
+        </item>
+
+    </group>
+
+</menu>

@@ -3,4 +3,8 @@
     <string name="web_client_id">605294703737-rpkgt7u8d603q79hgfb13uff17tr2qu3.apps.googleusercontent.com</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open Navigation drawer</string>
+    <string name="navigation_drawer_close">Close Navigation drawer</string>
+
 </resources>

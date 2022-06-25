@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".Dashboard_fragment">
 
    <LinearLayout
@@ -14,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hii , "
+        android:text="Hii, "
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="@color/blue_700"
@@ -46,6 +47,9 @@
         app:cardElevation="5dp"
         android:layout_marginTop="24dp"
         android:elevation="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="8dp"
         >
 
         <LinearLayout
@@ -127,6 +131,56 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recent Income:"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:padding="10dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/dashboard_recycleview_income"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recent Expanse:"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:padding="10dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/dashboard_recycleview_expanse"
+                android:layout_marginLeft="15dp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 
