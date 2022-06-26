@@ -26,6 +26,7 @@ public class Data {
 
 
 
+
     public int getAmount() {
         return amount;
     }
