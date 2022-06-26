@@ -17,6 +17,18 @@
         android:theme="@style/Theme.SmartMoney"
         tools:targetApi="31">
         <activity
+            android:name=".Expanse_piechart_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Expanse_barchart_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Income_piechart_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Income_barchart_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Dashboard_Activity"
             android:exported="false" />
         <activity

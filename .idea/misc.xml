@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/activity_expanse_barchart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/activity_expanse_piechart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/activity_income_barchart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/activity_income_piechart.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_about_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_analytics_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_feedback.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_income_fragment.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_profile_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/menu/drawer_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.141" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_feedback_24.xml" value="0.141" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/SmartMoney/app/src/main/res/drawable/ic_logout_24.xml" value="0.141" />

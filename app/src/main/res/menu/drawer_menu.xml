@@ -8,9 +8,9 @@
             android:title="DASHBOARD"
             android:icon="@drawable/ic_baseline_dashboard_24"/>
 
-        <item android:id="@+id/Reports_menu"
-            android:title="REPORTS"
-            android:icon="@drawable/ic_report_24"/>
+        <item android:id="@+id/analytics_menu"
+            android:title="ANALYTICS"
+            android:icon="@drawable/ic_analytics_24"/>
 
         <item android:id="@+id/Profile_menu"
             android:title="PROFILE"

@@ -19,6 +19,13 @@ public class Data {
         this.id = id;
     }
 
+    public Data(String type, int amount) {
+        this.type=type;
+        this.amount=amount;
+    }
+
+
+
     public int getAmount() {
         return amount;
     }

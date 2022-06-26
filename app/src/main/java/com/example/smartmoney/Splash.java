@@ -18,6 +18,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 Intent i = new Intent(getApplicationContext(),Dashboard_Activity.class);
                 startActivity(i);
+                finish();
             }
         },4000);
     }
