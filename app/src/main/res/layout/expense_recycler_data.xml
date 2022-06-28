@@ -18,43 +18,45 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/date_txt_expense"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="20 June 2022"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/date_txt_expense"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="0"
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/type_txt_expense"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="Type"
+                android:layout_marginLeft="30dp"
                 android:maxLines="1"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:text="Type"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/type_txt_expense"/>
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Note"
                 android:maxLines="1"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:layout_marginLeft="30dp"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/black"
                 android:textStyle="normal"
                 android:layout_below="@+id/type_txt_expense"
@@ -62,19 +64,35 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
+            android:layout_marginTop="10dp"
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/amount_txt_expense"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="300000"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/amount_txt_expense"/>
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginTop="10dp"
+            tools:ignore="Suspicious0dp" >
+
+            <ImageButton
+                android:id="@+id/delete_img_expense"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_delete_24" />
+
         </RelativeLayout>
 
     </LinearLayout>

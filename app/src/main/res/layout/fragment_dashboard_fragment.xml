@@ -8,9 +8,11 @@
     android:background="@color/background"
     tools:context=".Dashboard_fragment">
 
+
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_marginTop="70dp"
        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
@@ -18,7 +20,7 @@
         android:text="Hii, "
         android:textStyle="bold"
         android:textSize="24sp"
-        android:textColor="@color/blue_700"
+        android:textColor="@color/blue"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         />
@@ -30,7 +32,7 @@
         android:id="@+id/username_txt"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:textColor="@color/blue_700"
+        android:textColor="@color/blue"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="1dp"
         />
@@ -121,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceLarge"
-                        android:textColor="@color/black"
+                        android:textColor="@color/red"
                         android:id="@+id/dashboard_expense_sum_txt"
                         android:text="00000"
                         android:textStyle="bold"/>
@@ -148,6 +150,7 @@
                 android:layout_height="wrap_content"
                 android:text="Recent Income:"
                 android:textStyle="bold"
+                android:textColor="@color/blue"
                 android:layout_marginTop="15dp"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:padding="10dp"
@@ -165,6 +168,7 @@
                 android:layout_height="wrap_content"
                 android:text="Recent Expanse:"
                 android:layout_marginTop="15dp"
+                android:textColor="@color/blue"
                 android:textStyle="bold"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:padding="10dp"
@@ -181,7 +185,4 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
 </LinearLayout>

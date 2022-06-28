@@ -2,6 +2,7 @@ package com.example.smartmoney;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,13 +56,14 @@ public class Income_fragment extends Fragment {
     private EditText edt_Note;
 
     private Button btn_Update;
-    private Button btn_Delete;
+    private Button btn_Cancel;
 
     private String type;
     private String note;
     private int amount;
 
     private String post_key;
+    private String post_key_delete;
 
 
 
@@ -183,12 +187,16 @@ public class Income_fragment extends Fragment {
 
         FirebaseRecyclerAdapter<Data,MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull Data model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Data model) {
 
                 holder.setType(model.getType());
                 holder.setNote(model.getNote());
                 holder.setDate(model.getDate());
                 holder.setAmount(model.getAmount());
+
+               ImageButton imageButton = holder.mView.findViewById(R.id.delete_img);
+
+
 
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -202,6 +210,33 @@ public class Income_fragment extends Fragment {
                         updateDataitem();
                     }
                 });
+
+               imageButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AlertDialog.Builder d_builder = new AlertDialog.Builder(holder.mView.getContext());
+                        d_builder.setTitle("Are You Sure ?");
+                        d_builder.setMessage("Deleted Data can't be Undo");
+
+                        d_builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                post_key_delete=getRef(position).getKey();
+                                mincomeDatabase.child(post_key_delete).removeValue();
+                            }
+                        });
+
+                        d_builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        });
+                        d_builder.show();
+                    }
+                });
+
+
 
             }
             @NonNull
@@ -274,7 +309,7 @@ public class Income_fragment extends Fragment {
 
 
         btn_Update= myview.findViewById(R.id.btn_update);
-        btn_Delete = myview.findViewById(R.id.btn_delete);
+        btn_Cancel = myview.findViewById(R.id.btn_cancel);
 
         AlertDialog dialog = mydialog.create();
 
@@ -317,7 +352,7 @@ public class Income_fragment extends Fragment {
             }
         });
 
-        btn_Delete.setOnClickListener(new View.OnClickListener() {
+        btn_Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();

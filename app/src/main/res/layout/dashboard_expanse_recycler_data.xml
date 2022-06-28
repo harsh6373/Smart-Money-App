@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Type"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/blue_700"
+            android:textColor="@color/blue"
             android:textStyle="bold" />
 
 
@@ -35,7 +35,7 @@
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:textStyle="bold" />
 
         <TextView

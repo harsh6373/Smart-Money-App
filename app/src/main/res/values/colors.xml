@@ -2,15 +2,17 @@
 <resources>
 
 
-    <color name="background">#DBDFFD</color>
+    <color name="background">#E8EAF6</color>
     <color name="card_background">#F2F2F2</color>
 
 
-    <color name="blue_200">#9BA3EB</color>
-    <color name="blue_500">#646FD4</color>
-    <color name="blue_700">#242F9B</color>
+    <color name="blue_200">#B7E9F7</color>
+    <color name="blue_500">#7AD7F0</color>
+    <color name="blue_700">#92DFF3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+
 
 
 
@@ -19,6 +21,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="green">#00F40B</color>
+    <color name="red">#EE4B2B</color>
+    <color name="grey">#808080</color>
+
 
 
 </resources>

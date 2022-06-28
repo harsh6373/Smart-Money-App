@@ -6,7 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
+    tools:ignore="HardcodedText"
+
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/svg"/>
 
 
     <TextView
@@ -14,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-       android:layout_marginTop="35dp"
+        android:layout_marginTop="35dp"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/blue_500"
@@ -26,66 +33,89 @@
         android:layout_marginTop="8dp"
         />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/phoneno"
+   <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:hint="Enter Phone No."
-        android:layout_marginTop="35dp"
-        android:inputType="phone" />
+       android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="35dp"
+       android:ems="10"
+       android:inputType="phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Phone No."
+            tools:ignore="TouchTargetSizeCheck"
+            />
+   </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/send_otp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
-        android:text="SEND OTP"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        />
+        android:text="SEND OTP"
+        android:background="@drawable/light_background_button"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/otp_edittext"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:inputType="number"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:ems="10"
-        android:hint="Enter OTP"
-        android:layout_marginTop="20dp"
-        android:inputType="number" />
+        >
 
-    <com.google.android.material.button.MaterialButton
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="Enter OTP"
+            android:id="@+id/otp_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
         android:id="@+id/verify_otp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VERIFY"
+        android:layout_marginRight="20dp"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/light_background_button"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         />
 
-    <com.google.android.material.divider.MaterialDivider
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        />
+   <com.google.android.material.divider.MaterialDivider
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
-        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/blue_500"
-        android:text="Continue With Google Sign In" />
+        android:textColor="@color/grey"
+        android:text="OR" />
 
 
 
@@ -93,10 +123,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sign_in_button"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/svg_down"/>
 
 
 </LinearLayout>

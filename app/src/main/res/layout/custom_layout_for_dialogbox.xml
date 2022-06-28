@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -153,13 +154,13 @@
                     android:layout_weight="2">
 
                     <Button
+                        android:id="@+id/btn_cancel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="DELETE"
-                        android:id="@+id/btn_delete"
+                        android:background="@drawable/light_background_button"
+                        android:text="CANCEL"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
 
 
 
@@ -173,13 +174,13 @@
                     android:layout_weight="2">
 
                     <Button
+                        android:id="@+id/btn_update"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="UPDATE"
-                        android:id="@+id/btn_update"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        />
+                        android:background="@drawable/light_background_button"
+                        android:textSize="18sp" />
 
 
 

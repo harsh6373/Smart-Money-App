@@ -12,70 +12,88 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/date_txt_income"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="20 June 2022"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/date_txt_income"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="0"
             tools:ignore="Suspicious0dp" >
 
             <TextView
                 android:id="@+id/type_txt_income"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:maxLines="1"
-                android:layout_marginLeft="50dp"
                 android:text="Type"
-                android:textAppearance="?android:textAppearanceSmall"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/note_txt_income"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="Note"
-                android:maxLines="1"
-                android:layout_marginLeft="50dp"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/black"
-                android:textStyle="normal"
                 android:layout_below="@+id/type_txt_income"
-                android:id="@+id/note_txt_income"/>
+                android:layout_marginLeft="30dp"
+                android:maxLines="1"
+                android:text="Note"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="normal" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
+            android:layout_marginTop="10dp"
             tools:ignore="Suspicious0dp" >
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/amount_txt_income"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="300000"
-                android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:id="@+id/amount_txt_income"/>
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/green"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginRight="10dp"
+            tools:ignore="Suspicious0dp" >
+
+           <ImageButton
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:id="@+id/delete_img"
+               android:background="@drawable/ic_baseline_delete_24"
+               android:layout_marginTop="10dp"/>
+
         </RelativeLayout>
 
     </LinearLayout>
