@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -106,6 +107,7 @@ public class Dashboard_Activity extends AppCompatActivity implements BottomNavig
                 break;
 
             case R.id.logout_menu:
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 break;
 
             case R.id.about_menu:

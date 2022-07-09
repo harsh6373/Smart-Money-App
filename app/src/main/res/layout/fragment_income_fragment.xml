@@ -22,7 +22,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="70dp"
             android:textColor="@color/blue"
             android:text="Add income" />
 
@@ -38,49 +38,70 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
 
-        <EditText
-            android:id="@+id/edt_income_type"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledTextField"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Income type ?" />
+            android:layout_marginRight="20dp">
 
-        <EditText
-            android:id="@+id/edt_income_amount"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_income_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Income type ?" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledTextField2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="20dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_income_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Enter Amount" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/edt_income_note"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledTextField3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="20dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_income_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Add Note" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_add_income"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:background="@drawable/gradient_button"
+            android:background="@drawable/light_background_button"
             android:text="Add" />
 
 
@@ -90,7 +111,9 @@
             android:layout_height="70dp"
             app:cardElevation="10dp"
             android:elevation="5dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
             app:cardCornerRadius="10dp">
 
 
@@ -138,18 +161,16 @@
         </androidx.cardview.widget.CardView>
 
 
-
-
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/recycleview_income"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="15dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"/>
+            android:layout_marginTop="100dp"/>
 
 
     </LinearLayout>

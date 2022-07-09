@@ -7,7 +7,6 @@
     android:background="@color/background"
     android:orientation="vertical"
     tools:ignore="HardcodedText"
-
     tools:context=".MainActivity">
 
     <ImageView

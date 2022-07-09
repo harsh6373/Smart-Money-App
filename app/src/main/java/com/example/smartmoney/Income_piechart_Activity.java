@@ -1,10 +1,13 @@
 package com.example.smartmoney;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -28,6 +31,7 @@ import java.util.Collections;
 
 public class Income_piechart_Activity extends AppCompatActivity {
 
+    Toolbar toolbar;
     private PieChart pieChart;
     private FirebaseAuth mAuth;
     private DatabaseReference mincomeDatabase;
@@ -38,6 +42,12 @@ public class Income_piechart_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_piechart);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Smart Money");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         pieChart=findViewById(R.id.income_pie_chart);
 
@@ -125,4 +135,15 @@ public class Income_piechart_Activity extends AppCompatActivity {
         pieChart.animateX(2500);
         pieChart.invalidate();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

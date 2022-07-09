@@ -1,10 +1,13 @@
 package com.example.smartmoney;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
@@ -26,6 +29,7 @@ import java.util.ArrayList;
 
 public class Expanse_barchart_Activity extends AppCompatActivity {
 
+    Toolbar toolbar;
    private BarChart barChart;
    private ArrayList<BarEntry> barEntryArrayList;
     private ArrayList<String> strings;
@@ -37,6 +41,12 @@ public class Expanse_barchart_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expanse_barchart);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Smart Money");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         barChart = findViewById(R.id.expanse_barChart);
 
@@ -105,4 +115,15 @@ public class Expanse_barchart_Activity extends AppCompatActivity {
         xAxis.setLabelCount(strings.size());
         xAxis.setLabelRotationAngle(270);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

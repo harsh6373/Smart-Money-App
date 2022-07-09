@@ -34,6 +34,14 @@ public class Dashboard_fragment extends Fragment {
     DatabaseReference mexpenseDatabase;
 
 
+    FirebaseDatabase db;
+    DatabaseReference root;
+    FirebaseUser firebaseUser;
+    String uid;
+    User user;
+    TextView username_display;
+
+
     private RecyclerView recyclerView_income;
     private RecyclerView recyclerView_expanse;
 
@@ -46,6 +54,29 @@ public class Dashboard_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View myview = inflater.inflate(R.layout.fragment_dashboard_fragment, container, false);
+
+
+
+        db = FirebaseDatabase.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        uid = firebaseUser.getUid();
+        root = db.getReference().child("Users").child(uid);
+        user = new User();
+        username_display = myview.findViewById(R.id.username_txt);
+
+
+        root.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+                username_display.setText(user.getFName());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         totalIncome_txt = myview.findViewById(R.id.dashboard_income_sum_txt);
         totalExpense_txt = myview.findViewById(R.id.dashboard_expense_sum_txt);
@@ -123,6 +154,7 @@ public class Dashboard_fragment extends Fragment {
         layoutManager_expanse.setReverseLayout(true);
         recyclerView_expanse.setHasFixedSize(true);
         recyclerView_expanse.setLayoutManager(layoutManager_expanse);
+
 
 
         return myview;

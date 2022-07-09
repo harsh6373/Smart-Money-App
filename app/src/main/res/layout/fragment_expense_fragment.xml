@@ -25,7 +25,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="70dp"
                 android:textColor="@color/blue"
                 android:text="Add Expense" />
 
@@ -41,49 +41,70 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
 
-            <EditText
-                android:id="@+id/edt_expence_type"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_expence_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Expanse type ?" />
 
-            <EditText
-                android:id="@+id/edt_expence_amount"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="20dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_expence_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Enter Amount" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/edt_expence_note"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="20dp">
+            <EditText
+                android:id="@+id/edt_expence_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Add Note" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btn_add_expence"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:background="@drawable/gradient_button"
+                android:background="@drawable/light_background_button"
                 android:text="Add" />
 
 
@@ -92,7 +113,9 @@
                 android:layout_height="70dp"
                 app:cardElevation="10dp"
                 android:elevation="5dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 app:cardCornerRadius="10dp">
 
 
@@ -131,7 +154,7 @@
                             android:id="@+id/expense_txt_result"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="300000"
+                            android:tooltipText="0000000"
                             android:textAppearance="?android:textAppearanceLarge"
                             android:textColor="@color/red" />
 
@@ -141,18 +164,11 @@
             </androidx.cardview.widget.CardView>
 
 
-
-
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/recycleview_expanse"
-                />
-
-            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"/>
+                android:layout_height="500dp"
+                android:layout_marginTop="15dp" />
 
 
 

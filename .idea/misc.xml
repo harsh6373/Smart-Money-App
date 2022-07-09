@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/gradient_background.xml" value="0.1445" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/gradient_background_3.xml" value="0.1445" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/gradient_button.xml" value="0.1445" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/gradient_list.xml" value="0.1445" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/light_background_button.xml" value="0.1445" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/light_gradient_background.xml" value="0.1445" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/drawable/simple_border.xml" value="0.1445" />
@@ -21,7 +23,7 @@
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/dashboard_expanse_recycler_data.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/dashboard_income_recycler_data.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/expense_recycler_data.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_about_.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_about_.xml" value="0.18" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_analytics_.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_dashboard_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Harsh Jani/AndroidStudioProjects/Smart-Money-App/app/src/main/res/layout/fragment_expense_fragment.xml" value="0.20416666666666666" />

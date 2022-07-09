@@ -3,11 +3,14 @@ package com.example.smartmoney;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
@@ -29,6 +32,7 @@ import java.util.ArrayList;
 
 public class Income_barchart_Activity extends AppCompatActivity {
 
+    Toolbar toolbar;
     BarChart barChart;
     ArrayList<BarEntry> barEntryArrayList;
     ArrayList<String> strings;
@@ -41,6 +45,13 @@ public class Income_barchart_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_barchart);
+
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Smart Money");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         barChart = findViewById(R.id.income_barChart);
 
@@ -109,6 +120,16 @@ public class Income_barchart_Activity extends AppCompatActivity {
         xAxis.setGranularity(1f);
         xAxis.setLabelCount(strings.size());
         xAxis.setLabelRotationAngle(270);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
