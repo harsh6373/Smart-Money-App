@@ -35,4 +35,20 @@ The scope of the project is apparent.
 ![10](https://user-images.githubusercontent.com/61573985/179351882-968c544d-8991-49a2-93bb-8a0230d45817.jpg)
 ![111](https://user-images.githubusercontent.com/61573985/179351889-aaaadccb-19ef-462e-8a7f-589f8ac540f4.jpg)
 
+# License
+
+ Copyright 2022 Harsh Jani
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
  MADE WITH :heart: BY HARSH
